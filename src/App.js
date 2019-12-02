@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+// 1. "connect" is a function from the react-redux library and imported in to this app. 
 import { connect } from 'react-redux';
 import './App.css';
 
@@ -33,9 +34,12 @@ class App extends Component {
   }
 }
 
+
 const mapStateToProps = (state) => {
 //   debugger;
   return { items: state.items }
 }
 
+// 2. By passing in mapStateToProps as an argument to "connect", App receives the return value as a prop. App.props.items will show the values of state.items.
+// 3. Any function passed in to the connect function will be called every time state changes.
 export default connect(mapStateToProps)(App);
